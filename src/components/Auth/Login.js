@@ -19,23 +19,42 @@ function Login() {
         }
     }, [email,password])
   return (
-    <div>
-        <h1>Login</h1> 
-        <form onSubmit={handleLogin}>
-            <input 
-                type='email' 
-                placeholder='Enter Your Email'
-                value={email}
-                onChange={e => setEmail(e.target.value)}
-            />
-            <input 
-                type='password'
-                placeholder='Enter Password here'
-                value={password}
-                onChange={e => setPassword(e.target.value)}
-            />
-            <button>Login</button>
-        </form>
+    <div className='w-screen h-screen bg-zinc-200 flex justify-center'>
+        <div className='w-96 rounded-lg bg-white opacity-90 my-20'>
+            <div className='flex justify-center my-4'>
+                <h1 className='text-2xl text-zinc-600 font-bold py-4'>Login</h1>
+            </div>
+         
+            <div className='flex-col justify-center'>
+                <form onSubmit={handleLogin}>
+                    <div className='mb-2 px-4 py-4'>
+                        <input 
+                            type='email' 
+                            placeholder='Enter Address'
+                            value={email}
+                            onChange={e => setEmail(e.target.value)}
+                            className='border-2 rounded-md w-full p-2'
+                            required
+                        />
+                    </div>
+                    <div className='mb-2 px-4 py-4'>
+                        <input 
+                            type='password'
+                            placeholder='Password'
+                            value={password}
+                            onChange={e => setPassword(e.target.value)}
+                            className='border-2 rounded-md w-full p-2'
+                            required
+                        />
+                    </div>
+                    <div className='px-4 py-4'>
+                        <button className='w-full rounded-lg p-2 bg-lime-600 text-white font-bold hover:bg-blue-800'>
+                            Login
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
   )
 }
